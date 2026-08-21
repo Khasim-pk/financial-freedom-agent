@@ -1,0 +1,15 @@
+.venv/
+.secrets/
+.streamlit/secrets.toml
+__pycache__/
+*.pyc
+.DS_Store
+Backup v1.0/
+app_before_*.py
+app_step*_backup.py
+merge_step*.py
+*_backup.py
+*_before_*.py
+app_sheets_test.py
+telegram_bot_test.py
+test_sheets_connection.py

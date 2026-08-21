@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Apply font override to Streamlit app */
+html, body, [class*="css"], .stApp {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Base style overrides for Muted Sage Green Light Theme */
+.stApp {
+    background: linear-gradient(135deg, #f4f7f5 0%, #e5ede7 100%) !important; /* Muted sage base */
+    color: #2c3e35 !important; /* Dark moss green text */
+}
+
+/* Sidebar styling override */
+section[data-testid="stSidebar"] {
+    background-color: #e6ede8 !important;
+    border-right: 1px solid rgba(43, 62, 50, 0.08) !important;
+}
+
+section[data-testid="stSidebar"] [class*="css"] {
+    color: #2c3e35 !important;
+}
+
+/* Headers and subheaders styling */
+h1, h2, h3, h4, h5, h6, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+    color: #1a2b21 !important; /* Strong forest green */
+    font-weight: 700 !important;
+}
+
+/* Glassmorphic Grid Layout */
+.glass-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 16px 0 24px 0;
+    width: 100%;
+}
+
+/* Glassmorphism Card Style - Light Frosted */
+.glass-card {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid rgba(43, 62, 50, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 8px 32px 0 rgba(43, 62, 50, 0.06) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(74, 117, 89, 0.4) !important; /* Sage green border glow */
+    box-shadow: 0 12px 40px 0 rgba(74, 117, 89, 0.12) !important;
+}
+
+.glass-card-header {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #5c7264 !important; /* Soft moss gray */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.glass-card-value {
+    font-size: 1.85rem !important;
+    font-weight: 700 !important;
+    color: #1a2b21 !important;
+    line-height: 1.2;
+}
+
+.glass-card-footer {
+    font-size: 0.75rem !important;
+    color: #6c8274 !important;
+    margin-top: 8px;
+}
+
+/* Pre-spend Decision Box Styling (Light Frosted) */
+.decision-card {
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+    border: 1px solid rgba(43, 62, 50, 0.1);
+    box-shadow: 0 10px 30px rgba(43, 62, 50, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.decision-card.Approved {
+    border-left: 6px solid #10b981; /* Emerald */
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.08) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.decision-card.Caution {
+    border-left: 6px solid #f59e0b; /* Amber */
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.08) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.decision-card.Not-Recommended {
+    border-left: 6px solid #f97316; /* Orange */
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.08) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.decision-card.Blocked {
+    border-left: 6px solid #ef4444; /* Rose/Red */
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.08) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.decision-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.decision-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a2b21;
+}
+
+.decision-message {
+    color: #3d5245;
+    font-size: 1.05rem;
+}
+
+/* Left-bordered Alert Cards */
+.alert-card {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(43, 62, 50, 0.08);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(43, 62, 50, 0.04);
+}
+
+.alert-card.Red { border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.04); }
+.alert-card.Orange { border-left: 4px solid #f97316; background: rgba(249, 115, 22, 0.04); }
+.alert-card.Yellow { border-left: 4px solid #eab308; background: rgba(234, 179, 8, 0.04); }
+.alert-card.Green { border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.04); }
+.alert-card.Info { border-left: 4px solid #3b82f6; background: rgba(59, 130, 246, 0.04); }
+
+/* Custom Progress Bar */
+.progress-container-custom {
+    background: rgba(43, 62, 50, 0.08);
+    border-radius: 999px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.progress-bar-custom {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar-green {
+    background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+}
+
+.progress-bar-yellow {
+    background: linear-gradient(90deg, #eab308 0%, #ca8a04 100%);
+}
+
+.progress-bar-orange {
+    background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
+}
+
+.progress-bar-red {
+    background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* Priority Table Style */
+.priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.priority-item {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(43, 62, 50, 0.05);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority-rank {
+    background: rgba(74, 117, 89, 0.15);
+    color: #2a4d36;
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.priority-label {
+    flex-grow: 1;
+    margin-left: 16px;
+    color: #2c3e35;
+    font-weight: 500;
+}
+
+.priority-badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.priority-badge.urgent { background: rgba(239, 68, 68, 0.15); color: #b91c1c; }
+.priority-badge.critical { background: rgba(249, 115, 22, 0.15); color: #c2410c; }
+.priority-badge.high { background: rgba(234, 179, 8, 0.15); color: #a16207; }
+.priority-badge.normal { background: rgba(16, 185, 129, 0.15); color: #047857; }
+.priority-badge.later { background: rgba(148, 163, 184, 0.2); color: #475569; }
